@@ -20,7 +20,25 @@ export class UsersComponent implements OnInit {
       console.log(users);
       this.users = users;
     });
+
+    this.dataService.getRepos().subscribe((repositories: any[]) => {
+      console.log(repositories);
+      this.repositories = repositories;
+    })
    }
+
+   searchUser(){
+    this.dataService.updateUsers(this.username);
+    this.dataService.getUsers().subscribe((users: any) => {
+     console.log(users);
+     this.users = users;
+   });
+
+   this.dataService.getRepos().subscribe((repositories: any[]) => {
+     console.log(repositories);
+     this.repositories = repositories;
+   })
+  }
 
   ngOnInit(): void {
   }
