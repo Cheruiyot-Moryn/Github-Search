@@ -94,6 +94,31 @@
             </div>
           </div>
         </div>
-  <!-- End of User Profile Section -->
+        <div class="container-fluid">
+            <h4 class="style2">{{users.name | last}}'s Repositories</h4>
+            <hr class="style2">
+          <div class="row">
   
-  <!-- Begin of Repositories Section -->
+  
+            <div class="col-md-6" *ngFor="let repo of repos;let i = 'index'">
+  
+                  <div class="cards repocard">
+                    <div class="card-header">
+  
+                      <h5 id = {{i}} class = "card-title">
+                          {{repo.name}}
+                      </h5>
+                    </div>
+                   <div class="card-body">
+                        <p>
+                           {{repo.description}}
+                        </p>
+                        <p>
+                          {{repo.created_at | date}}
+                        </p>
+                        <a href="{{repo.html_url}}" target="_blank" class= "btn btn-primary btn-sm">View on Github</a>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
