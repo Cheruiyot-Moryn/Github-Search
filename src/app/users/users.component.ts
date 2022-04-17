@@ -13,8 +13,14 @@ export class UsersComponent implements OnInit {
   repositories!: any[];
   created_at:any;
   username!: string;
-  
-  constructor() { }
+
+  constructor(private dataService: DataService) {
+    this.users = new Users ("","","","","","","",0,false,new Date(),0,0);
+    this.dataService.getUsers().subscribe((users: any) => {
+      console.log(users);
+      this.users = users;
+    });
+   }
 
   ngOnInit(): void {
   }
