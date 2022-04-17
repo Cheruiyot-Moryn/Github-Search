@@ -17,3 +17,83 @@
         <p class="searchtext">Enter Username to search for github profile</p>
       </div>
     </div>
+    <div class="row profile">
+
+        <div class="col-md-12 col-sm-12">
+  
+          <div class="container-fluid">
+            <div class="row">
+  
+                <div class="cards">
+                    <div class="card-header">
+                        <p class = "inline">
+                          Username: {{users.login}}
+                        </p>
+  
+                        <span class="profile_follows">
+                          <span class="badge badge-primary">
+                          <i class="fas fa-user"></i>Followers
+                          <span class="spacing">{{users.followers}}</span>
+                        </span>
+                        <span class="badge badge-success">
+                          <i class="fas fa-user"></i>Following
+                          <span class="spacing">{{users.following}}</span>
+                        </span>
+                        <span class="badge badge-info">
+                          <i class="fas fa-code-branch"></i>Public Gist
+                          <span class="spacing">{{users.public_gist}}</span>
+                        </span>
+                        </span>
+  
+                    </div>
+                </div>
+  
+            </div>
+  
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-12">
+                  <img src="{{users.avatar_url}}" alt="avatar image" class="rounded-circle img-responsive">
+                </div>
+  
+  
+                <div class="col-md-7 offset-md-2 col-sm-12">
+                  <div *ngIf="users['name']">
+                    <h4>{{users.name}}</h4>
+                  </div>
+                    <hr class="style1">
+                    <p>{{users.bio}}</p>
+                    <table>
+                        <tr *ngIf="users.created_at">
+                          <td>Created On</td>
+                          <td>{{users.created_at | date}}</td>
+  
+                        </tr>
+                        <tr>
+                          <td>Number of Repos</td>
+                          <td>{{users.public_repos}}</td>
+  
+                        </tr>
+                        <tr *ngIf="users['hireable']">
+                          <td>Hireable</td>
+                          <td>{{users.hireable}}</td>
+  
+                        </tr>
+                        <tr>
+                          <td *ngIf="users.company">Company</td>
+                          <td>{{users.company}}</td>
+  
+                        </tr>
+                      </table>
+  
+                      <p>
+                        <a href="{{users.html_url}}" target="_blank"class="btn btn-primary btn-sm github_btn">View profile from Github</a>
+                      </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!-- End of User Profile Section -->
+  
+  <!-- Begin of Repositories Section -->
