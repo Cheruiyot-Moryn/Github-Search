@@ -1,0 +1,19 @@
+
+<app-root></app-root>
+
+
+<div class="wrapper">
+
+  <div class="container-fluid">
+
+    <div class="row">
+      
+      
+      <div class="container-fluid search">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Git Username" aria-label="Search" [(ngModel)]="username" name = "username" (keyup)= "searchUser()">
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit"> <i class="fas fa-search"></i>Search</button>
+        </form>
+        <p class="searchtext">Enter Username to search for github profile</p>
+      </div>
+    </div>
