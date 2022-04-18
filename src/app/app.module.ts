@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { UsersComponent } from './users/users.component';
 import { ErrorComponent } from './error/error.component';
+import { NamePipe } from './name.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     RepositoriesComponent,
     UsersComponent,
-    ErrorComponent
+    ErrorComponent,
+    NamePipe
   ],
   imports: [
     BrowserModule,
