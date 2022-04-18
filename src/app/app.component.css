@@ -14,7 +14,6 @@ body a{
 }
 
 
-/* Navbar Styling */
 nav.opaque-navbar{
     background-color: whitesmoke;
     border-bottom: 0px;
@@ -27,7 +26,6 @@ nav.opaque-navbar{
 }
 
 
-/* Responsive Styling */
 @media only screen and (max-width: 992px) {
     li.nav-item.user{
         position: absolute;
