@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://api.github.com/"
+  apiUrl: "https://api.github.com/",
+  accessToken:'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'
 };
 
 /*
