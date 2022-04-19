@@ -1,0 +1,104 @@
+.app-home {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.app-home-content {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.app-home-form {
+  max-width: 400px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+
+.app-home-form-input {
+  border: 0;
+  width: 100%;
+  flex: 1;
+  padding: 10px 20px;
+  outline: none;
+  font-size: 17px;
+}
+
+.app-home-form-button {
+  border: 0;
+  border-left: 1px solid #ddd;
+  cursor: pointer;
+  padding: 12px 15px;
+  height: 100%;
+  width: 100px;
+  font-size: 17px;
+  outline: none;
+}
+
+.app-home-search-results-list {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-home-search-results-list-item {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.app-home-search-results-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.app-home-search-results-list-item-name {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+}
+
+.app-home-search-results-list-item-desc {
+  margin: 10px auto;
+}
+
+.app-home-search-results-list-item-label {
+  margin-right: 10px;
+}
+
+.app-home-no-search-results {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 15px;
+  max-width: 500px;
+}
+
+.app-home-content-tabs {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+.app-home-content-tabs-item {
+  padding: 10px 20px;
+  border: 0;
+  border-bottom: 2px solid #ddd;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+}
+
+.app-home-content-tabs-item:hover,
+.app-home-content-tabs-item-selected {
+  border-bottom: 2px solid #333;
+  background-color: rgba(234, 238, 242, 0.5);
+}
