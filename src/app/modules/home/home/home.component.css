@@ -2,6 +2,9 @@
   height: 100vh;
   margin: 0 auto;
   padding: 30px 20px;
+  background-color: antiquewhite;
+  background-size: cover;
+  overflow: scroll;
 }
 
 .app-home-content {

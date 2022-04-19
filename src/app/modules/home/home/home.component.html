@@ -1,4 +1,7 @@
 <section class="app-home">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top opaque-navbar">
+    <a class="navbar-brand" href="#">Github Search</a>
+  </nav>
   <section class="app-home-content">
     <section class="app-home-content-tabs">
       <div
@@ -61,7 +64,7 @@
       *ngIf="githubUser && selectedTab === 'users'"
       class="app-home-search-results-list"
     >
-      Todo : Show user here
+     Show user here
     </section>
     <div
       *ngIf="repos && repos.length === 0 && searched && selectedTab === 'repos'"

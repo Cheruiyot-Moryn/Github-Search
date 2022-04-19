@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit {
       } else {
         // Reset previous search...
         this.githubUser = null;
+        console.log()
         // Get a user...
         this.githubService.getUser(search).subscribe({
           next: (user) => {
