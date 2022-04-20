@@ -23,7 +23,18 @@ export class HomeComponent implements OnInit {
     stargazers_count: number;
   }[] = [];
 
-  public githubUser: any = null;
+  public githubUser:
+  {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+    name: string;
+    bio: string;
+    location: string;
+    followers: number;
+    following: number;
+  } |
+   any = null;
 
   public searched: boolean = false;
   public searching: boolean = false;
@@ -80,7 +91,6 @@ export class HomeComponent implements OnInit {
       } else {
         // Reset previous search...
         this.githubUser = null;
-        console.log()
         // Get a user...
         this.githubService.getUser(search).subscribe({
           next: (user) => {
@@ -88,6 +98,7 @@ export class HomeComponent implements OnInit {
               // Update the user...
               this.githubUser = user;
               this.searching = false;
+              console.log(user);
             }
             // Update the searched flag...
             this.onSearched();

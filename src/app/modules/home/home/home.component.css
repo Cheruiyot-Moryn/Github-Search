@@ -105,3 +105,51 @@
   border-bottom: 2px solid #333;
   background-color: rgba(234, 238, 242, 0.5);
 }
+
+.app-home-search-results-user {
+  display: flex;
+  gap: 10px;
+  margin: 25px auto;
+  max-width: 500px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.app-home-search-results-user-avatar img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.app-home-search-results-user-info {
+  flex: 1;
+}
+
+.app-home-search-results-user-info-name {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.app-home-search-results-user-info-bio {
+  margin: 5px auto;
+}
+
+.app-home-search-results-user-info-name-right {
+  color: rgb(78, 79, 79);
+  font-size: 16px;
+}
+
+.app-home-search-results-user-info-counts {
+  color: rgb(78, 79, 79);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+}

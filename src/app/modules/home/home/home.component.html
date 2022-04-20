@@ -4,78 +4,70 @@
   </nav>
   <section class="app-home-content">
     <section class="app-home-content-tabs">
-      <div
-        [class]="
+      <div [class]="
           selectedTab === 'repos'
             ? 'app-home-content-tabs-item app-home-content-tabs-item-selected'
             : 'app-home-content-tabs-item'
-        "
-        (click)="onTabChange('repos')"
-      >
+        " (click)="onTabChange('repos')">
         Repositories
       </div>
-      <div
-        [class]="
+      <div [class]="
           selectedTab === 'users'
             ? 'app-home-content-tabs-item app-home-content-tabs-item-selected'
             : 'app-home-content-tabs-item'
-        "
-        (click)="onTabChange('users')"
-      >
+        " (click)="onTabChange('users')">
         User
       </div>
     </section>
     <form class="app-home-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
-      <input
-        class="app-home-form-input"
-        type="search"
-        placeholder="Search GitHub"
-        name="search"
-        [(ngModel)]="formData.search"
-        #search="ngModel"
-        required
-      />
+      <input class="app-home-form-input" type="search" placeholder="Search GitHub" name="search"
+        [(ngModel)]="formData.search" #search="ngModel" required />
       <button type="submit" class="app-home-form-button">Search</button>
     </form>
-    <section
-      *ngIf="repos && repos.length > 0 && selectedTab === 'repos'"
-      class="app-home-search-results-list"
-    >
+    <section *ngIf="repos && repos.length > 0 && selectedTab === 'repos'" class="app-home-search-results-list">
       <div *ngFor="let repo of repos" class="app-home-search-results-list-item">
-        <a
-          class="app-home-search-results-list-item-name"
-          [href]="repo.html_url"
-          >{{ repo.full_name }}</a
-        >
+        <a class="app-home-search-results-list-item-name" [href]="repo.html_url">{{ repo.full_name }}</a>
         <div class="app-home-search-results-list-item-desc">
           {{ repo.description }}
         </div>
         <div class="app-home-search-results-list-item-footer">
-          <span class="app-home-search-results-list-item-label"
-            >{{ repo.stargazers_count }} Stars</span
-          >
-          <span class="app-home-search-results-list-item-label"
-            >{{ repo.forks_count }} Forks</span
-          >
+          <span class="app-home-search-results-list-item-label">{{ repo.stargazers_count }} Stars</span>
+          <span class="app-home-search-results-list-item-label">{{ repo.forks_count }} Forks</span>
         </div>
       </div>
     </section>
-    <section
-      *ngIf="githubUser && selectedTab === 'users'"
-      class="app-home-search-results-list"
-    >
-     Show user here
+    <section *ngIf="githubUser && selectedTab === 'users'">
+      <section class="app-home-search-results-user">
+        <div class="app-home-search-results-user-avatar">
+          <img loading="lazy" [src]="githubUser.avatar_url" alt="{{ githubUser.login }} avatar" />
+        </div>
+        <div class="app-home-search-results-user-info">
+          <div class="app-home-search-results-user-info-name">
+            <span>{{ githubUser.name }}</span>
+            <span class="app-home-search-results-user-info-name-right">@{{ githubUser.login }}</span>
+          </div>
+          <div class="app-home-search-results-user-info-bio">
+            {{ githubUser.bio }}
+          </div>
+          <div class="app-home-search-results-user-info-location">
+            {{ githubUser.location }}
+          </div>
+          <div class="app-home-search-results-user-info-counts">
+            <div class="app-home-search-results-user-info-repos">
+              <b>{{ githubUser.following }}</b> Following
+            </div>
+            <div class="app-home-search-results-user-info-followers">
+              <b>{{ githubUser.followers }}</b> Followers
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
-    <div
-      *ngIf="repos && repos.length === 0 && searched && selectedTab === 'repos'"
-      class="app-home-no-search-results"
-    >
+    
+    <div *ngIf="repos && repos.length === 0 && searched && selectedTab === 'repos'" class="app-home-no-search-results">
       No search result found
     </div>
-    <div
-      *ngIf="githubUser === null && searched && selectedTab === 'users'"
-      class="app-home-no-search-results"
-    >
+    <div *ngIf="githubUser === null && searched && selectedTab === 'users'" class="app-home-no-search-results">
       No user found
     </div>
     <div *ngIf="notFound && searched" class="app-home-no-search-results">
